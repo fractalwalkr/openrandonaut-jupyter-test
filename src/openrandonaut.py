@@ -92,7 +92,7 @@ def main_generate_location(start_lat, start_lon, radius, num_points):
 
     k_pos = kernel(positions)
 
-    max_dense_lat, max_dense_lon = positions.T[np.argmax(k_pos)]
+    max_dense_lon, max_dense_lat = positions.T[np.argmax(k_pos)]
 
     print(f"KDE cordinates: {max_dense_lat}, {max_dense_lon}")
     return max_dense_lon, max_dense_lat, radius, num_points
