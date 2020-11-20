@@ -78,8 +78,8 @@ def main_generate_location(start_lat, start_lon, radius, num_points):
     # Create DataFrame from list of coordinates
     df = pd.DataFrame(coord_list, columns=["longitude", "latitude"])
 
-    x_data = df.latitude
-    y_data = df.longitude
+    y_data = df.latitude
+    x_data = df.longitude
 
     print("Calculating gaussian kernel density estimate...")
     kernel = stats.gaussian_kde(np.vstack([x_data, y_data]), bw_method="silverman")
